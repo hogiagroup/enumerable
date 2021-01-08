@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "ES6",
+    "experimentalDecorators": true,
+    "lib": [
+      "ES2020"
+    ],
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "declaration": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "outDir": "./dist",
+    "downlevelIteration": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts"
+  ]
+}
