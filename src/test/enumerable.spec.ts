@@ -1288,12 +1288,12 @@ describe('Enumerable', () => {
       );
     });
 
-    it('should not have more elements than either iterable', () => {
+    it('should not have more elements than the "this" iterable', () => {
       jsc.assertForall(
         jsc.array(jsc.nat), jsc.array(jsc.nat),
         (xs: number[], ys: number[]) => {
           const len = new Enumerable(xs).intersect(ys).count();
-          return len <= xs.length && len <= ys.length;
+          return len <= xs.length;
         }
       );
     });

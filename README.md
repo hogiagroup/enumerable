@@ -16,4 +16,4 @@ The class PivotSelectionStrategies contains predefined functions for selecting p
 To build, run 'npm run build'. Tests are run with 'npm run test' or 'npm run tdd' (auto-watch).
 
 # Contribute
-Submit a pull request and contact team Hwassbuk at Hogia Business Products.
+Submit a pull request.
