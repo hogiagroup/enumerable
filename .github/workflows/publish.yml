@@ -17,6 +17,7 @@ jobs:
         registry-url: 'https://npm.pkg.github.com'
         scope: '@hogiagroup'
     - run: npm ci
+    - run: npm run build-release
     - run: npm publish --dry-run
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
