@@ -18,6 +18,6 @@ jobs:
         scope: '@hogiagroup'
     - run: npm ci
     - run: npm run build-release
-    - run: npm publish dist --dry-run
+    - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
