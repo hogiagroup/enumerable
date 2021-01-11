@@ -1,8 +1,2 @@
-src
-.editorconfig
-.gitattributes
-.gitignore
-tsconfig.json
-tslint.json
-package-lock.json
-test
+*
+!dist/**/*
