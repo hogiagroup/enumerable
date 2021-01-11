@@ -1,5 +1,5 @@
 {
-  "name": "@hogia/enumerable",
+  "name": "@hogiagroup/enumerable",
   "version": "5.1.2",
   "description": "Utilities for Iterable",
   "readme": "README.md",
@@ -25,6 +25,9 @@
       "publishPath": "dist",
       "publish": false
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@hogiagroup"
   },
   "keywords": [
     "hogia",
