@@ -222,3 +222,4 @@ Web/App/index.html
 Web/App/lib
 Web/Web.csproj
 /.vscode/tasks.json
+.env

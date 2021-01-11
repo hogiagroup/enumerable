@@ -1298,4 +1298,19 @@ describe('Enumerable', () => {
       );
     });
   });
+
+  describe('toCounter', () => {
+    it('should have the correct counts of each element', () => {
+      expect(new Enumerable().toCounter()).toEqual(new Map<number, number>());
+      expect(new Enumerable([1, 2, 3, 2, 3, 3]).toCounter()).toEqual(new Map([[1, 1], [2, 2], [3, 3]]));
+
+      jsc.assertForall(
+        jsc.array(jsc.nat),
+        (xs: number[]) => {
+          const xse = new Enumerable(xs);
+          return new Enumerable(xse.toCounter()).all(([k, v]) => v === xse.count(k));
+        }
+      );
+    });
+  });
 });

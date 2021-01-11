@@ -1272,4 +1272,16 @@ export class Enumerable<T> implements Iterable<T> {
     const set = new Set(iterable);
     return this.where(x => set.has(x));
   }
+
+  /**
+   * Returns a Map with the number of occurrences of each element.
+   */
+  public toCounter(): Map<T, number> {
+    const counter = new Map<T, number>();
+    for (const x of this) {
+      const count = counter.get(x) ?? 0;
+      counter.set(x, count + 1);
+    }
+    return counter;
+  }
 }
