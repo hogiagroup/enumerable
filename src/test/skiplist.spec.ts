@@ -10,7 +10,7 @@ describe('SkipList', () => {
         jsc.array(jsc.nat),
         (xs: number[]) => {
           const sut = new SkipList(xs);
-          return sut.count === xs.length;
+          return sut.count() === xs.length;
         });
     });
 
@@ -40,7 +40,7 @@ describe('SkipList', () => {
         (xs: number[], item: number) => {
           const sut = new SkipList(xs);
           sut.insert(item);
-          return sut.count === xs.length + 1 && TestUtils.isSortedAsc(sut);
+          return sut.count() === xs.length + 1 && TestUtils.isSortedAsc(sut);
         });
     });
 
@@ -50,7 +50,7 @@ describe('SkipList', () => {
         (xs: number[], items: number[]) => {
           const sut = new SkipList(xs);
           sut.insert(...items);
-          return sut.count === xs.length + items.length && TestUtils.isSortedAsc(sut);
+          return sut.count() === xs.length + items.length && TestUtils.isSortedAsc(sut);
         });
     });
   });
