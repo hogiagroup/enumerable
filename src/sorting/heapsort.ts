@@ -8,17 +8,17 @@ import { CompareFunction } from '../types';
 
 export class HeapSort {
   /**
-     * Sorts the given iterable in ascending order, using the default CompareFunction.
-     *
-     * @param iterable
-     */
+   * Sorts the given iterable in ascending order, using the default CompareFunction.
+   *
+   * @param iterable
+   */
   public static sort<T>(iterable: Iterable<T>): Enumerable<T>;
   /**
-     * Sorts the given iterable using the provided CompareFunction for comparing elements.
-     *
-     * @param iterable
-     * @param compareFn
-     */
+   * Sorts the given iterable using the provided CompareFunction for comparing elements.
+   *
+   * @param iterable
+   * @param compareFn
+   */
   public static sort<T>(iterable: Iterable<T>, compareFn: CompareFunction<T>): Enumerable<T>;
   @enumerable()
   public static *sort<T>(iterable: Iterable<T>, compareFn: CompareFunction<T> = Utils.defaultCompareFn): Iterable<T> {

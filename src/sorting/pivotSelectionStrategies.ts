@@ -5,14 +5,14 @@ import { CompareFunction } from '../types';
  */
 export class PivotSelectionStrategies {
   /**
-     * Selects the median of the first, middle and last elements as the pivot.
-     * Runs in expected O(n log n) time also when the iterable may be already sorted,
-     * but uses more memory because the whole iterable needs to be stored in an array.
-     * Good all-round pivot selection strategy.
-     *
-     * @param xs the iterable to be sorted
-     * @param compareFn the function be used when comparing two elements
-     */
+   * Selects the median of the first, middle and last elements as the pivot.
+   * Runs in expected O(n log n) time also when the iterable may be already sorted,
+   * but uses more memory because the whole iterable needs to be stored in an array.
+   * Good all-round pivot selection strategy.
+   *
+   * @param xs the iterable to be sorted
+   * @param compareFn the function be used when comparing two elements
+   */
   public static medianOfThree<T>(xs: Iterable<T>, compareFn: CompareFunction<T>): T | undefined {
     const arr = PivotSelectionStrategies._asArray(xs);
     if (arr.length === 0) {
@@ -36,25 +36,25 @@ export class PivotSelectionStrategies {
   }
 
   /**
-     * Selects the first element as the pivot.
-     * Runs in O(n^2) time on already-sorted iterables, but selection is much faster
-     * and uses less memory than median-of-three or random selection.
-     * Suitable for iterables that are not expected to be presorted.
-     *
-     * @param xs the iterable to be sorted
-     */
+   * Selects the first element as the pivot.
+   * Runs in O(n^2) time on already-sorted iterables, but selection is much faster
+   * and uses less memory than median-of-three or random selection.
+   * Suitable for iterables that are not expected to be presorted.
+   *
+   * @param xs the iterable to be sorted
+   */
   public static first<T>(xs: Iterable<T>): T | undefined {
     return xs[Symbol.iterator]().next().value;
   }
 
   /**
-     * Selects a random element as the pivot.
-     * Runs in expected O(n log n) time, but needs to store the iterable as an array,
-     * using more memory. Good all-round pivot selection strategy that behaves similarly
-     * to median-of-three selection.
-     *
-     * @param xs the iterable to be sorted
-     */
+   * Selects a random element as the pivot.
+   * Runs in expected O(n log n) time, but needs to store the iterable as an array,
+   * using more memory. Good all-round pivot selection strategy that behaves similarly
+   * to median-of-three selection.
+   *
+   * @param xs the iterable to be sorted
+   */
   public static random<T>(xs: Iterable<T>): T | undefined {
     const arr = PivotSelectionStrategies._asArray(xs);
     if (arr.length === 0) {

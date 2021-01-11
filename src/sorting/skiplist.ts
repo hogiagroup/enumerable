@@ -17,7 +17,6 @@ class Node<T> {
 
 /**
  * An ordered list, with expected search, insertion and removal complexity in O(log n).
- * See http://igoro.com/archive/skip-lists-are-fascinating/.
  */
 export class SkipList<T> implements Iterable<T> {
   private readonly _maxLevel: number = 33;
@@ -27,29 +26,29 @@ export class SkipList<T> implements Iterable<T> {
   private _count = 0;
 
   /**
-     * Constructs a new empty SkipList.
-     */
+   * Constructs a new empty SkipList.
+   */
   public constructor();
   /**
-     * Constructs a new SkipList from the given Iterable.
-     *
-     * @param iterable
-     */
+   * Constructs a new SkipList from the given Iterable.
+   *
+   * @param iterable
+   */
   public constructor(iterable: Iterable<T>);
   /**
-     * Constructs a new empty SkipList using the given CompareFunction for
-     * comparing elements.
-     *
-     * @param compareFn
-     */
+   * Constructs a new empty SkipList using the given CompareFunction for
+   * comparing elements.
+   *
+   * @param compareFn
+   */
   public constructor(compareFn: CompareFunction<T>);
   /**
-     * Constructs a new empty SkipList from the given Iterable,
-     * using the given CompareFunction for comparing elements.
-     *
-     * @param iterable
-     * @param compareFn
-     */
+   * Constructs a new empty SkipList from the given Iterable,
+   * using the given CompareFunction for comparing elements.
+   *
+   * @param iterable
+   * @param compareFn
+   */
   public constructor(iterable: Iterable<T>, compareFn: CompareFunction<T>);
   public constructor(...args: any[]) {
     if (args.length === 0) {
@@ -75,30 +74,30 @@ export class SkipList<T> implements Iterable<T> {
   }
 
   /**
-     * The number of elements in the SkipList.
-     */
-  public get count(): number {
+   * The number of elements in the SkipList.
+   */
+  public count(): number {
     return this._count;
   }
 
   /**
-     * Returns the SkipList as an Enumerable object.
-     */
+   * Returns the SkipList as an Enumerable object.
+   */
   public toEnumerable(): Enumerable<T> {
     return new Enumerable(this);
   }
 
   /**
-     * Inserts the given element into the SkipList.
-     *
-     * @param value the element to be inserted.
-     */
+   * Inserts the given element into the SkipList.
+   *
+   * @param value the element to be inserted.
+   */
   public insert(value: T): void;
   /**
-     * Inserts the given elements into the SkipList.
-     *
-     * @param values the elements to be inserted.
-     */
+   * Inserts the given elements into the SkipList.
+   *
+   * @param values the elements to be inserted.
+   */
   public insert(...values: T[]): void;
   public insert(...values: T[]): void {
     for (const value of values) {
@@ -124,11 +123,11 @@ export class SkipList<T> implements Iterable<T> {
   }
 
   /**
-     * Checks for occurrence of the provided value.
-     *
-     * @param value the element to look for.
-     * @returns true iff the SkipList contains value.
-     */
+   * Checks for occurrence of the provided value.
+   *
+   * @param value the element to look for.
+   * @returns true iff the SkipList contains value.
+   */
   public contains(value: T): boolean {
     let curr = this._head;
     for (let i = this._nLevels - 1; i >= 0; i--) {
@@ -143,11 +142,11 @@ export class SkipList<T> implements Iterable<T> {
   }
 
   /**
-     * Removes the first occurrence of value.
-     *
-     * @param value the element to be removed.
-     * @returns true iff value was found.
-     */
+   * Removes the first occurrence of value.
+   *
+   * @param value the element to be removed.
+   * @returns true iff value was found.
+   */
   public remove(value: T): boolean {
     let curr = this._head;
     let found = false;

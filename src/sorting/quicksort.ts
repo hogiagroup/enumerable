@@ -7,11 +7,11 @@ import { CompareFunction, PivotSelector } from '../types';
 
 export class QuickSort {
   /**
-     * Sorts the given iterable using the provided CompareFunction for comparing elements.
-     *
-     * @param iterable
-     * @param compareFn
-     */
+   * Sorts the given iterable using the provided CompareFunction for comparing elements.
+   *
+   * @param iterable
+   * @param compareFn
+   */
   public static sort<T>(xs: Iterable<T>, compareFn: CompareFunction<T>, pivotSelector: PivotSelector<T>): Enumerable<T>;
   @enumerable()
   public static *sort<T>(xs: Iterable<T>, compareFn: CompareFunction<T>, pivotSelector: PivotSelector<T>): Iterable<T> {
