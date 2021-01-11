@@ -1,6 +1,6 @@
 {
   "name": "@hogia/enumerable",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Utilities for Iterable",
   "readme": "README.md",
   "main": "dist/index.js",
