@@ -4,7 +4,7 @@ process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function (config) {
   config.set({
-    basePath: path.dirname(__dirname) + '\\test',
+    basePath: __dirname,
     files: [
       { pattern: './karma-init.js', watched: false }
     ],
