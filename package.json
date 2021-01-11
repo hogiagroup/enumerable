@@ -26,6 +26,9 @@
       "publish": false
     }
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@hogiagroup"
+  },
   "keywords": [
     "hogia",
     "enumerable",
