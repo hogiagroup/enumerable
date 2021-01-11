@@ -841,7 +841,7 @@ export class Enumerable<T> implements Iterable<T> {
         return this._source.size;
       }
       if (this._source instanceof SkipList) {
-        return this._source.count;
+        return this._source.count();
       }
     }
     const [property] = args;
