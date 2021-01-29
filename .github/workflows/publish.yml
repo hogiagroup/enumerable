@@ -19,25 +19,12 @@ jobs:
         scope: '@hogiagroup'
     - run: npm ci
     - run: npm run build-release
-    - id: githubVersionCheck
-      uses: EndBug/version-check@v2.0.1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    - run: npm publish
-      if: steps.githubVersionCheck.outputs.changed == 'true'
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
     - uses: actions/setup-node@v1
       with:
         node-version: '14.x'
         registry-url: 'https://registry.npmjs.org'
-    - id: npmVersionCheck
-      uses: EndBug/version-check@v2.0.1
-      with:
-        file-url: https://npm.pkg.github.com/@hogiagroup%2fenumerable@latest/package.json
-        static-checking: localIsNew
     - run: npm publish --access public
-      if: steps.npmVersionCheck.outputs.changed == 'true'
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
