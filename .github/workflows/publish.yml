@@ -22,9 +22,7 @@ jobs:
     - id: githubVersionCheck
       uses: EndBug/version-check@v2.0.1
       with:
-        file-url: https://npm.pkg.github.com/@hogiagroup%2fenumerable@latest/package.json
         token: ${{ secrets.GITHUB_TOKEN }}
-        static-checking: localIsNew
     - run: npm publish
       if: steps.githubVersionCheck.outputs.changed == 'true'
       env:
