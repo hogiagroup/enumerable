@@ -32,7 +32,14 @@
   "keywords": [
     "hogia",
     "enumerable",
-    "iterable"
+    "iterable",
+    "iterator",
+    "lazy",
+    "list",
+    "array",
+    "generator",
+    "sorting",
+    "functional"
   ],
   "author": "Hogia Business Products AB",
   "license": "MIT",
