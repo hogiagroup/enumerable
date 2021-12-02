@@ -477,7 +477,7 @@ export class Enumerable<T> implements Iterable<T> {
    */
   public except(iterable: Iterable<T>): this;
   @parse((_thisRef: Enumerable<T>, itemOrIterable: T | Iterable<T>) => {
-    if (!Utils.isIterable(itemOrIterable)) {
+    if (!Utils.isIterable(itemOrIterable) || typeof itemOrIterable === 'string') {
       return [(x: T) => x !== itemOrIterable];
     }
     const set = new Set(itemOrIterable as Iterable<T>);

@@ -1256,8 +1256,8 @@ describe('Enumerable', () => {
       expect(new Enumerable([1, 2, 3]).except(0).toArray()).toEqual([1, 2, 3]);
 
       jsc.assertForall(
-        jsc.array(jsc.nat), jsc.nat,
-        (xs: number[], a: number) =>
+        jsc.array(jsc.string), jsc.string,
+        (xs: string[], a: string) =>
           !new Enumerable(xs).except(a).contains(a)
       );
     });
